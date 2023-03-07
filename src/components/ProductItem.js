@@ -30,12 +30,16 @@ const ProductItem = (props) => {
                 </p>
                 <h1 className='capitalize text-3xl font-bold'>{props.data.title}</h1>
                 <p className='text-md leading-6 text-[#68707d] my-4'>{props.data.description}</p>
-                <div>
-                    <div className='flex'>
-                        <p>{formatToCurrency(currentPrice)}</p>
-                        <p>{formatToPercentage(props.data.discount)}</p>
+                <div className='flex justify-between items-center'>
+                    <div className='flex gap-4 items-center'>
+                        <p className='font-bold text-2xl'>{formatToCurrency(currentPrice)}</p>
+                        <p className='font-bold text-orange bg-pale-orange px-2 rounded-sm'>
+                            {formatToPercentage(props.data.discount)}
+                        </p>
                     </div>
-                    <p>{formatToCurrency(props.data.price)}</p>
+                    <p className='text-[#b6bcc8] line-through'>
+                        {formatToCurrency(props.data.price)}
+                    </p>
                 </div>
             </div>
         </div>
