@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import MenuIcon from '../assets/icons/icon-menu.svg';
 import Logo from '../assets/icons/logo.svg';
 import CartIcon from '../assets/icons/icon-cart.svg';
 
 import DefaultAccountAvatar from '../assets/images/image-avatar.png';
+import NavbarOverlay from './NavbarOverlay';
 
 const Header = () => {
+    const [navOpen, setNavOpen] = useState(false);
+
     return (
         <header className='flex justify-between p-4 items-center'>
             <div className='flex'>
@@ -38,6 +41,7 @@ const Header = () => {
                     className='w-8 cursor-pointer sm:w-12 transition-all duration-1000'
                 />
             </div>
+            <NavbarOverlay />
         </header>
     );
 };
