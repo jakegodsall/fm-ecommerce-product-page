@@ -1,4 +1,5 @@
 import React from 'react';
+import QuantitySelector from './QuantitySelector';
 
 const ProductItem = (props) => {
     console.log(props.data);
@@ -41,6 +42,7 @@ const ProductItem = (props) => {
                         {formatToCurrency(props.data.price)}
                     </p>
                 </div>
+                <QuantitySelector />
             </div>
         </div>
     );
