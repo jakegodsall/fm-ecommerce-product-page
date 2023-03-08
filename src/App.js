@@ -28,11 +28,15 @@ const DUMMY_DATA = [
 ];
 
 function App() {
+    const handleFormSubmission = (value) => {
+        console.log('from app', value);
+    };
+
     return (
         <div className='w-screen h-screen flex flex-col font-main-font my-8 '>
             <Header />
             <div className='h-full flex flex-col md:mt-10 items-center'>
-                <ProductItem data={DUMMY_DATA[0]} />
+                <ProductItem data={DUMMY_DATA[0]} getSubmittedQuantity={handleFormSubmission} />
             </div>
         </div>
     );

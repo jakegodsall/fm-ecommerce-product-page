@@ -24,6 +24,7 @@ const QuantitySelector = (props) => {
                 onClick={handleDecrement}
                 className='cursor-pointer px-4 py-6'
             />
+            <input type='text' className='hidden' readOnly min='0' value={quantity} id='quantity' />
             <p>{quantity}</p>
             <img
                 src={PlusIcon}
