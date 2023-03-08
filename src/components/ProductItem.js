@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from './Carousel';
+import ImageViewer from './ImageViewer';
 import QuantitySelector from './QuantitySelector';
 import Button from './UI/Button';
 
@@ -26,12 +27,21 @@ const ProductItem = (props) => {
     const currentPrice = props.data.price * props.data.discount;
 
     return (
-        <div className='flex flex-col'>
-            <Carousel>
-                {images.map((img, idx) => {
-                    return <img src={img} key={idx} alt={`product ${idx}`} />;
-                })}
-            </Carousel>
+        <div className='flex flex-col md:flex-row'>
+            <div className='md:hidden'>
+                <Carousel>
+                    {images.map((img, idx) => {
+                        return <img src={img} key={idx} alt={`product ${idx}`} />;
+                    })}
+                </Carousel>
+            </div>
+            <div className='hidden md:block'>
+                <ImageViewer
+                    images={props.data.images.full}
+                    thumbnails={props.data.images.thumbnail}
+                />
+            </div>
+
             <div className='p-4'>
                 <p className='uppercase text-orange font-bold text-xs tracking-widest mb-2'>
                     {props.data.brand}
