@@ -27,7 +27,7 @@ const ProductItem = (props) => {
     const currentPrice = props.data.price * props.data.discount;
 
     return (
-        <div className='flex flex-col md:flex-row'>
+        <div className='flex flex-col md:grid md:grid-cols-2 md:items-center md:gap-8'>
             <div className='md:hidden'>
                 <Carousel>
                     {images.map((img, idx) => {
@@ -35,14 +35,14 @@ const ProductItem = (props) => {
                     })}
                 </Carousel>
             </div>
-            <div className='hidden md:block'>
+            <div className='hidden md:block md:max-w-[500px]'>
                 <ImageViewer
                     images={props.data.images.full}
                     thumbnails={props.data.images.thumbnail}
                 />
             </div>
 
-            <div className='p-4'>
+            <div className='p-4 md:max-w-[500px]'>
                 <p className='uppercase text-orange font-bold text-xs tracking-widest mb-2'>
                     {props.data.brand}
                 </p>
