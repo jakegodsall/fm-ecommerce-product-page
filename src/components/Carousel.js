@@ -36,8 +36,11 @@ const Carousel = ({ children: slides }) => {
                     className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'
                     onClick={handlePrev}
                 >
-                    <svg className='w-4 h-4' xmlns='http://www.w3.org/2000/svg'>
-                        <path d='M11 1 3 9l8 8' stroke='#1D2026' strokeWidth='3' fill='none' />
+                    <svg
+                        className='w-4 h-4 stroke-[3] stroke-[#1D2026] fill-none'
+                        xmlns='http://www.w3.org/2000/svg'
+                    >
+                        <path d='M11 1 3 9l8 8' />
                     </svg>
                 </button>
 
@@ -45,8 +48,11 @@ const Carousel = ({ children: slides }) => {
                     className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'
                     onClick={handleNext}
                 >
-                    <svg className='w-4 h-4' xmlns='http://www.w3.org/2000/svg'>
-                        <path d='m2 1 8 8-8 8' stroke='#1D2026' strokeWidth='3' fill='none' />
+                    <svg
+                        className='w-4 h-4 stroke-[3] stroke-[#1D2026] fill-none'
+                        xmlns='http://www.w3.org/2000/svg'
+                    >
+                        <path d='m2 1 8 8-8 8' />
                     </svg>
                 </button>
             </div>
