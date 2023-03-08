@@ -29,9 +29,11 @@ const DUMMY_DATA = [
 
 function App() {
     return (
-        <div className='flex flex-col font-main-font m-8'>
+        <div className='w-screen h-screen flex flex-col font-main-font my-8 '>
             <Header />
-            <ProductItem data={DUMMY_DATA[0]} />
+            <div className='h-full flex flex-col md:mt-10 items-center'>
+                <ProductItem data={DUMMY_DATA[0]} />
+            </div>
         </div>
     );
 }
