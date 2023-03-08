@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import Header from './components/Header';
 
 import './App.css';
@@ -11,6 +13,7 @@ import ProductThumbnail1 from './assets/images/image-product-1-thumbnail.jpg';
 import ProductThumbnail2 from './assets/images/image-product-2-thumbnail.jpg';
 import ProductThumbnail3 from './assets/images/image-product-3-thumbnail.jpg';
 import ProductThumbnail4 from './assets/images/image-product-4-thumbnail.jpg';
+import Cart from './components/Cart';
 
 const DUMMY_DATA = [
     {
@@ -28,8 +31,10 @@ const DUMMY_DATA = [
 ];
 
 function App() {
+    const [quantityPurchased, setQuantityPurchased] = useState(0);
+
     const handleFormSubmission = (value) => {
-        console.log('from app', value);
+        setQuantityPurchased(value);
     };
 
     return (
@@ -38,6 +43,7 @@ function App() {
             <div className='h-full flex flex-col md:mt-10 items-center'>
                 <ProductItem data={DUMMY_DATA[0]} getSubmittedQuantity={handleFormSubmission} />
             </div>
+            <Cart quantity={quantityPurchased} />
         </div>
     );
 }
