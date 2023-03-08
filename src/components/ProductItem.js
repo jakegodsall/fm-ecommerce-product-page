@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageViewer from './ImageViewer';
 import QuantitySelector from './QuantitySelector';
 import Button from './UI/Button';
 
@@ -26,6 +27,7 @@ const ProductItem = (props) => {
 
     return (
         <div className='flex flex-col'>
+            <ImageViewer images={props.data.images} />
             <div className='p-4'>
                 <p className='uppercase text-orange font-bold text-xs tracking-widest mb-2'>
                     {props.data.brand}
