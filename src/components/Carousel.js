@@ -33,7 +33,7 @@ const Carousel = ({ children: slides }) => {
             </div>
             <div className='absolute inset-0 flex items-center justify-between p-4'>
                 <button
-                    className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'
+                    className='p-2 rounded-full bg-[#fff] opacity-50 hover:opacity-100 transition-opacity duration-300'
                     onClick={handlePrev}
                 >
                     <svg
@@ -45,7 +45,7 @@ const Carousel = ({ children: slides }) => {
                 </button>
 
                 <button
-                    className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'
+                    className='p-2 rounded-full bg-[#fff] opacity-50 hover:opacity-100 transition-opacity duration-300'
                     onClick={handleNext}
                 >
                     <svg
@@ -55,19 +55,6 @@ const Carousel = ({ children: slides }) => {
                         <path d='m2 1 8 8-8 8' />
                     </svg>
                 </button>
-            </div>
-
-            <div className=''>
-                <div className='flex items-center justify-center gap-2'>
-                    {slides.map((_, idx) => (
-                        <div
-                            className={`transition-all w-3 h-3 bg-black rounded-full ${
-                                current === idx ? 'p-2' : 'bg-opacity-50'
-                            }`}
-                            key={idx}
-                        ></div>
-                    ))}
-                </div>
             </div>
         </div>
     );
