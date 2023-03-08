@@ -1,10 +1,10 @@
 import React from 'react';
-import ImageViewer from './ImageViewer';
+import Carousel from './Carousel';
 import QuantitySelector from './QuantitySelector';
 import Button from './UI/Button';
 
 const ProductItem = (props) => {
-    console.log(props.data);
+    const images = props.data.images.full;
 
     const formatToCurrency = (value) => {
         const formatter = new Intl.NumberFormat('en-US', {
@@ -27,7 +27,11 @@ const ProductItem = (props) => {
 
     return (
         <div className='flex flex-col'>
-            <ImageViewer images={props.data.images} />
+            <Carousel>
+                {images.map((img, idx) => {
+                    return <img src={img} key={idx} alt={`product ${idx}`} />;
+                })}
+            </Carousel>
             <div className='p-4'>
                 <p className='uppercase text-orange font-bold text-xs tracking-widest mb-2'>
                     {props.data.brand}
