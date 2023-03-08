@@ -11,7 +11,10 @@ const PurchaseForm = (props) => {
         props.getSubmittedQuantity(input.value);
     };
     return (
-        <form className='' onSubmit={onSubmitHandler}>
+        <form
+            className='flex flex-col my-4 md:grid md:grid-cols-[1fr_2fr] md:items-center md:gap-4'
+            onSubmit={onSubmitHandler}
+        >
             <QuantitySelector />
             <Button>
                 <div className='flex justify-center gap-4 items-center'>
