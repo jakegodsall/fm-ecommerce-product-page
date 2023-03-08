@@ -51,15 +51,15 @@ const Header = () => {
             <div
                 className={
                     navOpen
-                        ? 'visible bg-black/70 absolute left-0 right-0 top-0 bottom-0 transition-all duration-500'
-                        : 'invisible opacity-0 absolute left-0 right-0 top-0 bottom-0 transition-all duration-1000'
+                        ? 'visible bg-[#000]/70 absolute left-0 right-0 top-0 bottom-0 transition-all duration-500 z-10'
+                        : 'invisible opacity-0 absolute left-0 right-0 top-0 bottom-0 transition-all duration-1000 z-10'
                 }
             >
                 <div
                     className={
                         navOpen
-                            ? 'w-[60%] h-full bg-white p-6 opacity-100 transition-all duration-1000'
-                            : 'w-[60%] h-full bg-white p-6 opacity-100 translate-x-[-100%] transition-all duration-1000'
+                            ? 'w-[60%] h-full bg-[#fff] p-6 opacity-100 transition-all duration-1000'
+                            : 'w-[60%] h-full bg-[#fff] p-6 opacity-100 translate-x-[-100%] transition-all duration-1000'
                     }
                 >
                     <img
