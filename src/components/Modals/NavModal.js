@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import CloseIcon from '../assets/icons/icon-close.svg';
+import CloseIcon from '../../assets/icons/icon-close.svg';
 
 const NavModal = ({ navOpen, handleNav }) => {
     return ReactDOM.createPortal(
