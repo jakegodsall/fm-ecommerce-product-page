@@ -12,7 +12,7 @@ const PurchaseForm = (props) => {
     };
     return (
         <form
-            className='flex flex-col my-4 md:grid md:grid-cols-[1fr_2fr] md:items-center md:gap-4'
+            className='flex flex-col my-8 md:grid md:grid-cols-[1fr_2fr] md:items-center md:gap-4'
             onSubmit={onSubmitHandler}
         >
             <QuantitySelector />
