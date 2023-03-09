@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Button from '../UI/Button';
 
-import ProductThumbnail from '../../assets/images/image-product-1-thumbnail.jpg';
-
-const CartModal = () => {
+const CartModal = (props) => {
     return ReactDOM.createPortal(
         <div className='absolute top-20 left-2 right-2 bg-[#fff] rounded-md'>
             <p>Cart</p>
@@ -13,7 +11,7 @@ const CartModal = () => {
                 <div>
                     <img
                         className='w-16 h-16 rounded-md'
-                        src={ProductThumbnail}
+                        src={props.thumbnail}
                         alt='selected product'
                     />
                 </div>

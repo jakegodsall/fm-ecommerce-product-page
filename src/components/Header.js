@@ -9,7 +9,7 @@ import CartIcon from '../assets/icons/icon-cart.svg';
 
 import DefaultAccountAvatar from '../assets/images/image-avatar.png';
 
-const Header = () => {
+const Header = (props) => {
     const [navOpen, setNavOpen] = useState(false);
 
     const handleNavOpen = () => {
@@ -54,7 +54,12 @@ const Header = () => {
                     handleNav={() => setNavOpen((prevState) => !prevState)}
                 />
             </header>
-            <CartModal />
+            <CartModal
+                quantityPurchased={props.quantityPurchased}
+                title={props.title}
+                discountedPrice={props.discountedPrice}
+                thumbnail={props.thumbnail}
+            />
         </div>
     );
 };

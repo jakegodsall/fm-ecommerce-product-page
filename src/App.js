@@ -22,6 +22,7 @@ const DUMMY_DATA = [
         brand: 'sneaker company',
         price: 250.0,
         discount: 0.5,
+        discountedPrice: 125.0,
         images: {
             full: [ProductImage1, ProductImage2, ProductImage3, ProductImage4],
             thumbnail: [ProductThumbnail1, ProductThumbnail2, ProductThumbnail3, ProductThumbnail4],
@@ -38,7 +39,12 @@ function App() {
 
     return (
         <div className='w-screen h-screen flex flex-col font-main-font'>
-            <Header />
+            <Header
+                quantityPurchased={quantityPurchased}
+                title={DUMMY_DATA[0].title}
+                discountedPrice={DUMMY_DATA[0].discountedPrice}
+                thumbnail={DUMMY_DATA[0].images.thumbnail[0]}
+            />
             <div className='h-full flex flex-col md:mt-10 items-center'>
                 <ProductItem data={DUMMY_DATA[0]} getSubmittedQuantity={handleFormSubmission} />
             </div>
