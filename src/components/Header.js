@@ -17,6 +17,10 @@ const Header = (props) => {
         setNavOpen((prevState) => !prevState);
     };
 
+    const handleCartOpen = () => {
+        setCartOpen((prevState) => !prevState);
+    };
+
     return (
         <div className='relative'>
             <header className='flex justify-between p-4 items-center'>
@@ -66,12 +70,13 @@ const Header = (props) => {
                 />
             </header>
             <CartModal
-                isOpen={cartOpen}
+                cartOpen={cartOpen}
                 quantitySelected={props.quantitySelected}
                 title={props.title}
                 discountedPrice={props.discountedPrice}
                 thumbnail={props.thumbnail}
                 removeFromCart={props.removeFromCart}
+                handleCartOpen={handleCartOpen}
             />
         </div>
     );
