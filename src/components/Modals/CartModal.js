@@ -21,40 +21,57 @@ const CartModal = (props) => {
                 }
                 onClick={() => props.handleCartOpen()}
             ></div>
-            <div
-                className={
-                    props.cartOpen
-                        ? 'opacity-1 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0'
-                        : 'opacity-0 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8'
-                }
-            >
-                <p className='p-4 border-b-[1px] font-bold border-[#cdd0d7]'>Cart</p>
-                <div className='p-4'>
-                    <div className='flex items-center gap-2'>
-                        <img
-                            className='w-14 h-14 rounded-md'
-                            src={props.thumbnail}
-                            alt='selected product'
-                        />
-                        <div className='my-4'>
-                            <p className='capitalize text-sm text-[#9b9ea6]'>{props.title}</p>
-                            <p className='text-sm font-bold text-[#000] leading-8'>
-                                <span className='text-[#9b9ea6] mr-4 font-normal'>{`${formattedPrice} x ${props.quantitySelected}`}</span>
-                                {`${formattedTotal}`}
-                            </p>
-                        </div>
-                        <img
-                            src={DeleteIcon}
-                            alt='remove from cart'
-                            className='cursor-pointer'
-                            onClick={() => props.removeFromCart()}
-                        />
+            {props.quantitySelected === 0 && (
+                <div
+                    className={
+                        props.cartOpen
+                            ? 'opacity-1 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px]'
+                            : 'opacity-0 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8'
+                    }
+                >
+                    <p className='p-4 border-b-[1px] font-bold border-[#cdd0d7]'>Cart</p>
+                    <div className='w-full h-[200px] flex flex-col items-center justify-center'>
+                        <p className='text-[#78797c] font-bold'>Your cart is empty.</p>
                     </div>
-                    <Button>
-                        <p className='text-[#fff]'>Checkout</p>
-                    </Button>
                 </div>
-            </div>
+            )}
+            {props.quantitySelected !== 0 && (
+                <div
+                    className={
+                        props.cartOpen
+                            ? 'opacity-1 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px]'
+                            : 'opacity-0 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8'
+                    }
+                >
+                    <p className='p-4 border-b-[1px] font-bold border-[#cdd0d7]'>Cart</p>
+                    <div className='flex flex-col items-center p-4'>
+                        <div className='w-full flex items-center gap-2'>
+                            <img
+                                className='w-14 h-14 rounded-md'
+                                src={props.thumbnail}
+                                alt='selected product'
+                            />
+                            <div className='my-4'>
+                                <p className='capitalize text-sm text-[#9b9ea6]'>{props.title}</p>
+                                <p className='text-sm font-bold text-[#000] leading-8'>
+                                    <span className='text-[#9b9ea6] mr-4 font-normal'>{`${formattedPrice} x ${props.quantitySelected}`}</span>
+                                    {`${formattedTotal}`}
+                                </p>
+                            </div>
+                            <img
+                                src={DeleteIcon}
+                                alt='remove from cart'
+                                className='cursor-pointer ml-auto'
+                                onClick={() => props.removeFromCart()}
+                            />
+                        </div>
+
+                        <Button>
+                            <p className='text-[#fff]'>Checkout</p>
+                        </Button>
+                    </div>
+                </div>
+            )}
         </React.Fragment>,
         document.getElementById('cart-portal')
     );
