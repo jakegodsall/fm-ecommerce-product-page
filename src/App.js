@@ -38,12 +38,12 @@ function App() {
     };
 
     return (
-        <div className='w-screen h-screen flex flex-col font-main-font my-8 '>
+        <div className='w-screen h-screen flex flex-col font-main-font'>
             <Header />
             <div className='h-full flex flex-col md:mt-10 items-center'>
                 <ProductItem data={DUMMY_DATA[0]} getSubmittedQuantity={handleFormSubmission} />
             </div>
-            <Cart quantity={quantityPurchased} />
+            {/* <Cart quantity={quantityPurchased} /> */}
         </div>
     );
 }

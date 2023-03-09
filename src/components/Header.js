@@ -54,6 +54,7 @@ const Header = () => {
                         ? 'visible bg-[#000]/70 absolute left-0 right-0 top-0 bottom-0 transition-all duration-500 z-10'
                         : 'invisible opacity-0 absolute left-0 right-0 top-0 bottom-0 transition-all duration-1000 z-10'
                 }
+                onClick={handleNavOpen}
             >
                 <div
                     className={
