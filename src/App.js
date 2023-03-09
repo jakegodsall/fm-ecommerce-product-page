@@ -31,16 +31,16 @@ const DUMMY_DATA = [
 ];
 
 function App() {
-    const [quantityPurchased, setQuantityPurchased] = useState(0);
+    const [quantitySelected, setQuantitySelected] = useState(0);
 
     const handleFormSubmission = (value) => {
-        setQuantityPurchased(value);
+        setQuantitySelected(value);
     };
 
     return (
         <div className='w-screen h-screen flex flex-col font-main-font'>
             <Header
-                quantityPurchased={quantityPurchased}
+                quantitySelected={quantitySelected}
                 title={DUMMY_DATA[0].title}
                 discountedPrice={DUMMY_DATA[0].discountedPrice}
                 thumbnail={DUMMY_DATA[0].images.thumbnail[0]}

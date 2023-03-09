@@ -38,6 +38,16 @@ const Header = (props) => {
                     </nav>
                 </div>
                 <div className='flex items-center'>
+                    <div
+                        className={
+                            +props.quantitySelected === 0
+                                ? 'opacity-0'
+                                : 'opacity-1 relative -top-3 left-8 text-xs text-[#fff] bg-orange rounded-full px-2 transition-opacity duration-300'
+                        }
+                    >
+                        {props.quantitySelected}
+                    </div>
+
                     <img
                         src={CartIcon}
                         alt='view cart'
@@ -55,7 +65,7 @@ const Header = (props) => {
                 />
             </header>
             <CartModal
-                quantityPurchased={props.quantityPurchased}
+                quantitySelected={props.quantitySelected}
                 title={props.title}
                 discountedPrice={props.discountedPrice}
                 thumbnail={props.thumbnail}

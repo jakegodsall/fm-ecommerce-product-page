@@ -5,25 +5,10 @@ import PurchaseForm from './PurchaseForm';
 import QuantitySelector from './QuantitySelector';
 import Button from './UI/Button';
 
+import { formatToCurrency, formatToPercentage } from '../utilities/numberUtilities';
+
 const ProductItem = (props) => {
     const images = props.data.images.full;
-
-    const formatToCurrency = (value) => {
-        const formatter = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-        });
-
-        return formatter.format(value);
-    };
-
-    const formatToPercentage = (value) => {
-        const formatter = new Intl.NumberFormat('en-US', {
-            style: 'percent',
-        });
-
-        return formatter.format(value);
-    };
 
     const handleFormSubmission = (value) => {
         props.getSubmittedQuantity(value);
