@@ -2,8 +2,6 @@ import React from 'react';
 import Carousel from './Carousel';
 import ImageViewer from './ImageViewer';
 import PurchaseForm from './PurchaseForm';
-import QuantitySelector from './QuantitySelector';
-import Button from './UI/Button';
 
 import { formatToCurrency, formatToPercentage } from '../utilities/numberUtilities';
 
