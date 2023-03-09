@@ -14,7 +14,13 @@ const CartModal = (props) => {
     console.log();
 
     return ReactDOM.createPortal(
-        <div className='absolute top-20 left-2 right-2 bg-[#fff] rounded-md'>
+        <div
+            className={
+                props.isOpen
+                    ? 'opacity-1 absolute top-20 left-2 right-2 bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0'
+                    : 'opacity-0 -translate-y-8 duration-1000 transition-all'
+            }
+        >
             <p>Cart</p>
             <div className='p-4'>
                 <div className='flex items-center gap-2'>

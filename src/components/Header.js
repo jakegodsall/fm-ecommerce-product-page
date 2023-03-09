@@ -11,6 +11,7 @@ import DefaultAccountAvatar from '../assets/images/image-avatar.png';
 
 const Header = (props) => {
     const [navOpen, setNavOpen] = useState(false);
+    const [cartOpen, setCartOpen] = useState(false);
 
     const handleNavOpen = () => {
         setNavOpen((prevState) => !prevState);
@@ -47,11 +48,11 @@ const Header = (props) => {
                     >
                         {props.quantitySelected}
                     </div>
-
                     <img
                         src={CartIcon}
                         alt='view cart'
                         className='mr-4 cursor-pointer md:mr-8 transition-all duration-1000'
+                        onClick={() => setCartOpen((prevState) => !prevState)}
                     />
                     <img
                         src={DefaultAccountAvatar}
@@ -65,6 +66,7 @@ const Header = (props) => {
                 />
             </header>
             <CartModal
+                isOpen={cartOpen}
                 quantitySelected={props.quantitySelected}
                 title={props.title}
                 discountedPrice={props.discountedPrice}
