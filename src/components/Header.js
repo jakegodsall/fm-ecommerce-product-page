@@ -33,12 +33,12 @@ const Header = (props) => {
                     />
                     <img src={Logo} alt='logo' className='' />
                     <nav className='hidden sm:block mx-8 md:mx-16 transition-all duration-1000'>
-                        <ul className='flex self-center gap-4 text-sm cursor-pointer'>
-                            <li>Collections</li>
-                            <li>Men</li>
-                            <li>Women</li>
-                            <li>About</li>
-                            <li>Contact</li>
+                        <ul className='flex self-center gap-4 text-sm cursor-pointer text-[#b6bcc8] '>
+                            <li className='active:text-[#000] hover:text-[#000]'>Collections</li>
+                            <li className='active:text-[#000] hover:text-[#000]'>Men</li>
+                            <li className='active:text-[#000] hover:text-[#000]'>Women</li>
+                            <li className='active:text-[#000] hover:text-[#000]'>About</li>
+                            <li className='active:text-[#000] hover:text-[#000]'>Contact</li>
                         </ul>
                     </nav>
                 </div>

@@ -22,46 +22,29 @@ const CartModal = (props) => {
                 }
                 onClick={() => props.handleCartOpen()}
             ></div>
-            {props.quantitySelected === 0 && (
-                <div
-                    className={
-                        props.cartOpen
-                            ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
-                            : 'opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
-                    }
-                >
-                    <div className='flex justify-between items-center border-b-[1px] border-[#cdd0d7]'>
-                        <p className='p-4  font-bold '>Cart</p>
-                        <img
-                            src={CloseIcon}
-                            alt='close cart'
-                            className='mr-4 cursor-pointer'
-                            onClick={() => props.handleCartOpen()}
-                        />
-                    </div>
+
+            <div
+                className={
+                    props.cartOpen
+                        ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] md:min-w-[302px] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
+                        : 'opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] md:min-w-[302px] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
+                }
+            >
+                <div className='flex justify-between items-center border-b-[1px] border-[#cdd0d7]'>
+                    <p className='p-4  font-bold '>Cart</p>
+                    <img
+                        src={CloseIcon}
+                        alt='close cart'
+                        className='mr-4 cursor-pointer'
+                        onClick={() => props.handleCartOpen()}
+                    />
+                </div>
+                {props.quantitySelected === 0 && (
                     <div className='w-full h-[200px] flex flex-col items-center justify-center'>
                         <p className='text-[#78797c] font-bold'>Your cart is empty.</p>
                     </div>
-                </div>
-            )}
-            {props.quantitySelected !== 0 && (
-                <div
-                    className={
-                        props.cartOpen
-                            ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
-                            : 'opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
-                    }
-                >
-                    <div className='flex justify-between items-center border-b-[1px] border-[#cdd0d7]'>
-                        <p className='p-4 font-bold'>Cart</p>
-                        <img
-                            src={CloseIcon}
-                            alt='close cart'
-                            className='mr-4 cursor-pointer'
-                            onClick={() => props.handleCartOpen()}
-                        />
-                    </div>
-
+                )}
+                {props.quantitySelected !== 0 && (
                     <div className='flex flex-col items-center p-4'>
                         <div className='w-full flex items-center gap-2'>
                             <img
@@ -88,8 +71,8 @@ const CartModal = (props) => {
                             <p className='text-[#fff]'>Checkout</p>
                         </Button>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </React.Fragment>,
         document.getElementById('cart-portal')
     );
