@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Button from '../UI/Button';
 
+import CloseIcon from '../../assets/icons/icon-close.svg';
 import DeleteIcon from '../../assets/icons/icon-delete.svg';
 
 import { formatToCurrency } from '../../utilities/numberUtilities';
@@ -25,11 +26,19 @@ const CartModal = (props) => {
                 <div
                     className={
                         props.cartOpen
-                            ? 'opacity-1 absolute top-20 left-2 right-2 md:left-[70%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
-                            : 'opacity-0 absolute top-20 left-2 right-2 md:left-[70%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
+                            ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
+                            : 'opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
                     }
                 >
-                    <p className='p-4 border-b-[1px] font-bold border-[#cdd0d7]'>Cart</p>
+                    <div className='flex justify-between items-center border-b-[1px] border-[#cdd0d7]'>
+                        <p className='p-4  font-bold '>Cart</p>
+                        <img
+                            src={CloseIcon}
+                            alt='close cart'
+                            className='mr-4 cursor-pointer'
+                            onClick={() => props.handleCartOpen()}
+                        />
+                    </div>
                     <div className='w-full h-[200px] flex flex-col items-center justify-center'>
                         <p className='text-[#78797c] font-bold'>Your cart is empty.</p>
                     </div>
@@ -39,11 +48,20 @@ const CartModal = (props) => {
                 <div
                     className={
                         props.cartOpen
-                            ? 'opacity-1 absolute top-20 left-2 right-2 md:left-[70%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
-                            : 'opacity-0 absolute top-20 left-2 right-2 md:left-[70%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
+                            ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
+                            : 'opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
                     }
                 >
-                    <p className='p-4 border-b-[1px] font-bold border-[#cdd0d7]'>Cart</p>
+                    <div className='flex justify-between items-center border-b-[1px] border-[#cdd0d7]'>
+                        <p className='p-4 font-bold'>Cart</p>
+                        <img
+                            src={CloseIcon}
+                            alt='close cart'
+                            className='mr-4 cursor-pointer'
+                            onClick={() => props.handleCartOpen()}
+                        />
+                    </div>
+
                     <div className='flex flex-col items-center p-4'>
                         <div className='w-full flex items-center gap-2'>
                             <img

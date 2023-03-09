@@ -23,7 +23,7 @@ const Header = (props) => {
 
     return (
         <div className='relative'>
-            <header className='flex justify-between p-4 items-center'>
+            <header className='flex justify-between p-4 items-center md:border-b-[1px] md:border-[#c0c0c1]'>
                 <div className='flex'>
                     <img
                         src={MenuIcon}

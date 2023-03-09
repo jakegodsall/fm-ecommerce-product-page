@@ -38,7 +38,7 @@ function App() {
     };
 
     return (
-        <div className='w-screen h-screen flex flex-col font-main-font'>
+        <div className='w-screen h-screen flex flex-col font-main-font md:px-40'>
             <Header
                 quantitySelected={quantitySelected}
                 title={DUMMY_DATA[0].title}
