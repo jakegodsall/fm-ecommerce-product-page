@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Button from '../UI/Button';
 
+import DeleteIcon from '../../assets/icons/icon-delete.svg';
+
 import { formatToCurrency } from '../../utilities/numberUtilities';
 
 const CartModal = (props) => {
@@ -15,9 +17,9 @@ const CartModal = (props) => {
         <div className='absolute top-20 left-2 right-2 bg-[#fff] rounded-md'>
             <p>Cart</p>
             <div className='p-4'>
-                <div className='flex items-center'>
+                <div className='flex items-center gap-2'>
                     <img
-                        className='w-14 h-14 rounded-md mr-2'
+                        className='w-14 h-14 rounded-md'
                         src={props.thumbnail}
                         alt='selected product'
                     />
@@ -28,6 +30,12 @@ const CartModal = (props) => {
                             {`${formattedTotal}`}
                         </p>
                     </div>
+                    <img
+                        src={DeleteIcon}
+                        alt='remove from cart'
+                        className='cursor-pointer'
+                        onClick={() => props.removeFromCart()}
+                    />
                 </div>
                 <Button>
                     <p className='text-[#fff]'>Checkout</p>

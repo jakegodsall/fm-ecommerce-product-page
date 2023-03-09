@@ -69,6 +69,7 @@ const Header = (props) => {
                 title={props.title}
                 discountedPrice={props.discountedPrice}
                 thumbnail={props.thumbnail}
+                removeFromCart={props.removeFromCart}
             />
         </div>
     );

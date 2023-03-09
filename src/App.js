@@ -44,6 +44,7 @@ function App() {
                 title={DUMMY_DATA[0].title}
                 discountedPrice={DUMMY_DATA[0].discountedPrice}
                 thumbnail={DUMMY_DATA[0].images.thumbnail[0]}
+                removeFromCart={() => setQuantitySelected(0)}
             />
             <div className='h-full flex flex-col md:mt-10 items-center'>
                 <ProductItem data={DUMMY_DATA[0]} getSubmittedQuantity={handleFormSubmission} />
