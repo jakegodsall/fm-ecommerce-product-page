@@ -23,22 +23,32 @@ const Header = (props) => {
 
     return (
         <div className='relative'>
-            <header className='flex justify-between p-4 items-center md:border-b-[1px] md:border-[#c0c0c1]'>
-                <div className='flex'>
+            <header className='flex justify-between items-center p-4 md:p-0 md:border-b-[1px] md:border-[#c0c0c1]'>
+                <div className='flex items-center'>
                     <img
                         src={MenuIcon}
                         alt='open menu'
-                        className='mr-4 self-center cursor-pointer sm:hidden'
+                        className='mr-8 self-center cursor-pointer sm:hidden hover:border-b-2 hover:border- box-border'
                         onClick={handleNavOpen}
                     />
                     <img src={Logo} alt='logo' className='' />
-                    <nav className='hidden sm:block mx-8 md:mx-16 transition-all duration-1000'>
-                        <ul className='flex self-center gap-4 text-sm cursor-pointer text-[#b6bcc8] '>
-                            <li className='active:text-[#000] hover:text-[#000]'>Collections</li>
-                            <li className='active:text-[#000] hover:text-[#000]'>Men</li>
-                            <li className='active:text-[#000] hover:text-[#000]'>Women</li>
-                            <li className='active:text-[#000] hover:text-[#000]'>About</li>
-                            <li className='active:text-[#000] hover:text-[#000]'>Contact</li>
+                    <nav className='hidden sm:block h-full mx-8 md:mx-16 transition-all duration-1000'>
+                        <ul className='flex self-center gap-8 text-sm cursor-pointer text-[#b6bcc8]'>
+                            <li className='py-8 active:text-[#000] hover:text-[#000] border-b-4 border-opacity-0 border-orange hover:border-opacity-100 transition-all duration-500'>
+                                Collections
+                            </li>
+                            <li className='py-8 active:text-[#000] hover:text-[#000] border-b-4 border-opacity-0 border-orange hover:border-opacity-100 transition-all duration-500'>
+                                Men
+                            </li>
+                            <li className='py-8 active:text-[#000] hover:text-[#000] border-b-4 border-opacity-0 border-orange hover:border-opacity-100 transition-all duration-500'>
+                                Women
+                            </li>
+                            <li className='py-8 active:text-[#000] hover:text-[#000] border-b-4 border-opacity-0 border-orange hover:border-opacity-100 transition-all duration-500'>
+                                About
+                            </li>
+                            <li className='py-8 active:text-[#000] hover:text-[#000] border-b-4 border-opacity-0 border-orange hover:border-opacity-100 transition-all duration-500'>
+                                Contact
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -47,7 +57,7 @@ const Header = (props) => {
                         className={
                             +props.quantitySelected === 0
                                 ? 'opacity-0'
-                                : 'opacity-1 relative -top-3 left-8 text-xs text-[#fff] bg-orange rounded-full px-2 transition-opacity duration-300'
+                                : 'opacity-1 relative -top-3 left-8 text-xs text-[#fff] bg- box-border rounded-full px-2 transition-opacity duration-300'
                         }
                     >
                         {props.quantitySelected}
@@ -55,7 +65,7 @@ const Header = (props) => {
                     <img
                         src={CartIcon}
                         alt='view cart'
-                        className='mr-4 cursor-pointer md:mr-8 transition-all duration-1000'
+                        className='mr-8 cursor-pointer md:mr-8 transition-al hover:border-b-2 hover:border-orangel duration-1000'
                         onClick={() => setCartOpen((prevState) => !prevState)}
                     />
                     <img
