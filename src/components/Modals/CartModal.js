@@ -26,8 +26,8 @@ const CartModal = (props) => {
             <div
                 className={
                     props.cartOpen
-                        ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] md:min-w-[302px] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out translate-y-0 h-[260px] shadow-2xl'
-                        : 'hidden opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] md:min-w-[302px] bg-[#fff] rounded-md transition-all duration-1000 ease-in-out -translate-y-8 shadow-2xl'
+                        ? 'opacity-1 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] md:min-w-[302px] bg-[#fff] rounded-md translate-y-0 h-[260px] shadow-2xl [transition:opacity_1s,transform_.1s]'
+                        : 'opacity-0 absolute top-20 left-2 right-2 md:left-auto md:right-[10%] md:min-w-[302px] bg-[#fff] rounded-md ease-in-out -translate-y-[350px] shadow-2xl [transition:opacity_.5s,transform_.5s]'
                 }
             >
                 <div className='flex justify-between items-center border-b-[1px] border-[#cdd0d7]'>
