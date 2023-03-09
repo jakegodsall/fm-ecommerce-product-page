@@ -34,7 +34,7 @@ function App() {
     const [quantitySelected, setQuantitySelected] = useState(0);
 
     const handleFormSubmission = (value) => {
-        setQuantitySelected(value);
+        setQuantitySelected((prevValue) => +prevValue + +value);
     };
 
     return (
