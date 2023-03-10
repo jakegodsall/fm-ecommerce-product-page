@@ -59,7 +59,7 @@ This was a great project to get more realistic practice using React and Tailwind
 
 Most significantly, in this project I have worked with:
 
-* Portals for modals and correct order or rendering in the DOM (cart modal, navigation bar modal).
+* Portals for modals and correct order or rendering in the DOM (cart modal, navigation bar modal, image viewer lightbox modal).
 * Passing state up and down the React tree (with attention to following the principle of least privilege).
 
 ### Continued development
