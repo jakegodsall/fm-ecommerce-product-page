@@ -28,7 +28,7 @@ Users should be able to:
 
 &#9745; See hover states for all interactive elements on the page
 
-- Open a lightbox gallery by clicking on the large product image
+&#9745; Open a lightbox gallery by clicking on the large product image
 
 &#9745; Switch the large product image by clicking on the small thumbnail images
 
