@@ -9,7 +9,7 @@ import { formatToCurrency, formatToPercentage } from '../utilities/numberUtiliti
 import ImageViewerModal from './Modals/ImageViewerModal';
 
 const ProductItem = (props) => {
-    const [productImageModal, setProductImageModal] = useState(true);
+    const [productImageModal, setProductImageModal] = useState(false);
 
     const images = props.data.images.full;
 
