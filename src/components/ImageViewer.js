@@ -11,7 +11,12 @@ const ImageViewer = (props) => {
 
     return (
         <div className='flex flex-col gap-4'>
-            <img className='rounded-lg' src={props.images[current]} alt={`product ${current}`} />
+            <img
+                className='rounded-lg cursor-pointer'
+                src={props.images[current]}
+                alt={`product ${current}`}
+                onClick={props.setModalOpen}
+            />
             <div className='flex justify-between w-full'>
                 {props.thumbnails.map((thumb, idx) => {
                     console.log(idx, current, idx === +current);

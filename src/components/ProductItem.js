@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
 import Carousel from './Carousel';
 import ImageViewer from './ImageViewer';
 import PurchaseForm from './PurchaseForm';
 
 import { formatToCurrency, formatToPercentage } from '../utilities/numberUtilities';
+import ImageViewerModal from './Modals/ImageViewerModal';
 
 const ProductItem = (props) => {
+    const [productImageModal, setProductImageModal] = useState(true);
+
     const images = props.data.images.full;
 
     const handleFormSubmission = (value) => {
@@ -27,7 +32,17 @@ const ProductItem = (props) => {
                 <ImageViewer
                     images={props.data.images.full}
                     thumbnails={props.data.images.thumbnail}
+                    setModalOpen={() => setProductImageModal((prevState) => !prevState)}
                 />
+                {ReactDOM.createPortal(
+                    <ImageViewerModal
+                        images={props.data.images.full}
+                        thumbnails={props.data.images.thumbnail}
+                        isOpen={productImageModal}
+                        setIsOpen={() => setProductImageModal((prevState) => !prevState)}
+                    />,
+                    document.getElementById('image-viewer-portal')
+                )}
             </div>
 
             <div className='p-4 md:max-w-[500px]'>
