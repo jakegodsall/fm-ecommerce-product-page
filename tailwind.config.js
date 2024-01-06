@@ -11,5 +11,5 @@ module.exports = {
       "main-font": ["Kumbh Sans", "sans-serif"],
     },
   },
-  plugins: ["prettier-plugin-tailwindcss"],
+  plugins: [],
 };
