@@ -18,12 +18,11 @@ const ProductItem = (props) => {
   const images = props.data.images.full;
 
   const handleFormSubmission = (value) => {
-    console.log("from ProductItem" + value);
     props.getSubmittedQuantity(value);
   };
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 md:items-center md:gap-8">
+    <main className="flex flex-col md:grid md:grid-cols-2 md:items-center md:gap-8">
       <div className="md:hidden">
         <Carousel>
           {images.map((img, idx) => {
@@ -47,7 +46,6 @@ const ProductItem = (props) => {
           document.getElementById("image-viewer-portal"),
         )}
       </div>
-
       <ProductDetails
         brand={props.data.brand}
         title={props.data.title}
@@ -56,7 +54,7 @@ const ProductItem = (props) => {
         price={props.data.price}
         handleFormSubmission={handleFormSubmission}
       />
-    </div>
+    </main>
   );
 };
 

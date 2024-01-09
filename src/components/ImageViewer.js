@@ -5,8 +5,6 @@ const ImageViewer = (props) => {
 
   const handleClick = (e) => {
     setCurrent(e.target.id);
-
-    console.log(e.target.id);
   };
 
   return (
@@ -19,7 +17,6 @@ const ImageViewer = (props) => {
       />
       <div className="flex w-full justify-between">
         {props.thumbnails.map((thumb, idx) => {
-          console.log(idx, current, idx === +current);
           return (
             <img
               className={

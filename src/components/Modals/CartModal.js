@@ -14,8 +14,6 @@ const CartModal = (props) => {
     props.discountedPrice * props.quantitySelected,
   );
 
-  console.log();
-
   return ReactDOM.createPortal(
     <React.Fragment>
       <div
