@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ImageViewer = (props) => {
+const ImageViewer = ({ images, thumbnails, setModalOpen }) => {
   const [current, setCurrent] = useState(0);
 
   const handleClick = (e) => {
@@ -11,18 +11,18 @@ const ImageViewer = (props) => {
     <div className="flex flex-col gap-4">
       <img
         className="cursor-pointer rounded-lg"
-        src={props.images[current]}
+        src={images[current]}
         alt={`product ${current}`}
-        onClick={props.setModalOpen}
+        onClick={setModalOpen}
       />
       <div className="flex w-full justify-between">
-        {props.thumbnails.map((thumb, idx) => {
+        {thumbnails.map((thumb, idx) => {
           return (
             <img
               className={
                 idx === +current
-                  ? "w-1/5 cursor-pointer rounded-lg border-2 border-orange opacity-50 transition-opacity duration-300"
-                  : "w-1/5 cursor-pointer rounded-lg"
+                  ? "duration-400 w-[20%] cursor-pointer rounded-lg border-[3px] border-orange opacity-50 transition-all hover:rounded-[20px] hover:border-2"
+                  : "w-[20%] cursor-pointer rounded-lg border-orange transition-all duration-200 hover:rounded-[20px]"
               }
               src={thumb}
               key={idx}
