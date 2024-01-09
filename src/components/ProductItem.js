@@ -11,6 +11,7 @@ import {
 } from "../utilities/numberUtilities";
 import ImageViewerModal from "./Modals/ImageViewerModal";
 import ProductDetails from "./ProductDetails";
+import AddedToCartModal from "./Modals/AddedToCartModal";
 
 const ProductItem = (props) => {
   const [productImageModal, setProductImageModal] = useState(false);
