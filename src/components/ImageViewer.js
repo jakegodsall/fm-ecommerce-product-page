@@ -1,43 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ImageViewer = (props) => {
-    const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
 
-    const handleClick = (e) => {
-        setCurrent(e.target.id);
+  const handleClick = (e) => {
+    setCurrent(e.target.id);
 
-        console.log(e.target.id);
-    };
+    console.log(e.target.id);
+  };
 
-    return (
-        <div className='flex flex-col gap-4'>
+  return (
+    <div className="flex flex-col gap-4">
+      <img
+        className="cursor-pointer rounded-lg"
+        src={props.images[current]}
+        alt={`product ${current}`}
+        onClick={props.setModalOpen}
+      />
+      <div className="flex w-full justify-between">
+        {props.thumbnails.map((thumb, idx) => {
+          console.log(idx, current, idx === +current);
+          return (
             <img
-                className='rounded-lg cursor-pointer'
-                src={props.images[current]}
-                alt={`product ${current}`}
-                onClick={props.setModalOpen}
+              className={
+                idx === +current
+                  ? "w-1/5 cursor-pointer rounded-lg border-2 border-orange opacity-50 transition-opacity duration-300"
+                  : "w-1/5 cursor-pointer rounded-lg"
+              }
+              src={thumb}
+              key={idx}
+              alt={`product thumbnail ${idx}`}
+              id={idx}
+              onClick={handleClick}
             />
-            <div className='flex justify-between w-full'>
-                {props.thumbnails.map((thumb, idx) => {
-                    console.log(idx, current, idx === +current);
-                    return (
-                        <img
-                            className={
-                                idx === +current
-                                    ? 'rounded-lg w-1/5 cursor-pointer border-orange border-2 opacity-50 transition-opacity duration-300'
-                                    : 'rounded-lg w-1/5 cursor-pointer'
-                            }
-                            src={thumb}
-                            key={idx}
-                            alt={`product thumbnail ${idx}`}
-                            id={idx}
-                            onClick={handleClick}
-                        />
-                    );
-                })}
-            </div>
-        </div>
-    );
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default ImageViewer;
