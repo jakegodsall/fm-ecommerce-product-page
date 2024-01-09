@@ -33,7 +33,6 @@ const Header = (props) => {
             onClick={handleNavOpen}
           />
           <img src={Logo} alt="logo" className="cursor-pointer" />
-
           <NavBar />
         </div>
         <div className="flex items-center">
