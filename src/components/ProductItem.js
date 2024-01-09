@@ -10,6 +10,7 @@ import {
   formatToPercentage,
 } from "../utilities/numberUtilities";
 import ImageViewerModal from "./Modals/ImageViewerModal";
+import ProductDetails from "./ProductDetails";
 
 const ProductItem = (props) => {
   const [productImageModal, setProductImageModal] = useState(false);
@@ -17,10 +18,9 @@ const ProductItem = (props) => {
   const images = props.data.images.full;
 
   const handleFormSubmission = (value) => {
+    console.log("from ProductItem" + value);
     props.getSubmittedQuantity(value);
   };
-
-  const currentPrice = props.data.price * props.data.discount;
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 md:items-center md:gap-8">
@@ -48,29 +48,14 @@ const ProductItem = (props) => {
         )}
       </div>
 
-      <div className="p-4 md:max-w-[500px]">
-        <p className="mb-2 text-xs font-bold uppercase tracking-widest text-orange">
-          {props.data.brand}
-        </p>
-        <h1 className="text-3xl font-bold capitalize">{props.data.title}</h1>
-        <p className="text-md my-4 leading-6 text-[#68707d]">
-          {props.data.description}
-        </p>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <p className="text-2xl font-bold">
-              {formatToCurrency(currentPrice)}
-            </p>
-            <p className="rounded-sm bg-pale-orange px-2 font-bold text-orange">
-              {formatToPercentage(props.data.discount)}
-            </p>
-          </div>
-          <p className="text-[#b6bcc8] line-through">
-            {formatToCurrency(props.data.price)}
-          </p>
-        </div>
-        <PurchaseForm getSubmittedQuantity={handleFormSubmission} />
-      </div>
+      <ProductDetails
+        brand={props.data.brand}
+        title={props.data.title}
+        description={props.data.description}
+        discount={props.data.discount}
+        price={props.data.price}
+        handleFormSubmission={handleFormSubmission}
+      />
     </div>
   );
 };
